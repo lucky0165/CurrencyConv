@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Converter View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConv" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConverterViewController" customModule="CurrencyConv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,8 +20,8 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency CONVERTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yf-Lr-xem">
-                                        <rect key="frame" x="17.5" y="59" width="379" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                        <rect key="frame" x="44" y="62" width="326.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -86,6 +86,12 @@
                             <constraint firstItem="Yn9-rW-8ZD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yai-vb-k1i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currencyPicker" destination="7dw-Be-inY" id="nqB-bJ-SGn"/>
+                        <outlet property="currencyRateLabel" destination="z6W-Bo-vkv" id="Wcg-8V-Rxw"/>
+                        <outlet property="leftCurrencyLabel" destination="R4y-SY-ot1" id="1Zf-ya-Qqo"/>
+                        <outlet property="rightCurrencyLabel" destination="Z4m-Sf-DR0" id="ZDc-Ae-2yu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
