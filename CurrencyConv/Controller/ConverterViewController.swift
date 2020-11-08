@@ -27,12 +27,15 @@ class ConverterViewController: UIViewController {
     }
 }
 
+// MARK: - ConverterManagerDelegate
+
 extension ConverterViewController: ConverterManagerDelegate {
     func didUpdateRate(leftC: String, rightC: String, rateC: String) {
         DispatchQueue.main.async {
             self.leftCurrencyLabel.text = leftC
             self.rightCurrencyLabel.text = rightC
             self.currencyRateLabel.text = rateC
+            self.descriptionLabel.text = "1 \(leftC) costs \(rateC) \(rightC)"
         }
     }
     
@@ -42,6 +45,8 @@ extension ConverterViewController: ConverterManagerDelegate {
     
     
 }
+
+// MARK: - UIPickerView DataSource & Delegate
 
 extension ConverterViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
