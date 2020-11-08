@@ -13,16 +13,34 @@ class ConverterViewController: UIViewController {
     @IBOutlet weak var rightCurrencyLabel: UILabel!
     @IBOutlet weak var currencyRateLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var converterManager = ConverterManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        converterManager.delegate = self
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
        
     }
+}
+
+extension ConverterViewController: ConverterManagerDelegate {
+    func didUpdateRate(leftC: String, rightC: String, rateC: String) {
+        DispatchQueue.main.async {
+            self.leftCurrencyLabel.text = leftC
+            self.rightCurrencyLabel.text = rightC
+            self.currencyRateLabel.text = rateC
+        }
+    }
+    
+    func didFailWithError(_ error: Error) {
+        print(error)
+    }
+    
+    
 }
 
 extension ConverterViewController: UIPickerViewDataSource, UIPickerViewDelegate {
